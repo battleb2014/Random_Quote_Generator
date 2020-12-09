@@ -3,10 +3,6 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-// Check the "Project Resources" section of the project instructions
-// Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 /*** 
  * `quotes` array 
 ***/
@@ -53,24 +49,43 @@ const quotes = [
     }
 ];
 
+const backgroundColor = [
+    'ffa8b2',
+    'eaa8ff',
+    'a8c3ff',
+    'a8ffed',
+    'a8ffd5',
+    'fffca8',
+    'ffd3a8'
+];
+
 /***
  * `getRandomQuote` function
 ***/
-
 function getRandomQuote() {
-    let quote;
-
-    randomIndex = Math.floor(Math.random() * 5);
-    randomQuote = quotes[randomIndex];
+    const randomQuoteIndex = Math.floor(Math.random() * (quotes.length - 1));
+    const randomQuote = quotes[randomQuoteIndex];
 
     return randomQuote;
 }
+console.log(getRandomQuote());
 
+/*
+'getRandomColor' fumction
+*/
+function getRandomColor() {
+    const randomColorIndex = Math.floor(Math.random() * (backgroundColor.length - 1));
+    const randomColor = backgroundColor[randomColorIndex];
+
+    return randomColor;
+}
+console.log(getRandomColor())
 /***
  * `printQuote` function
 ***/
 function printQuote() {
     const quote = getRandomQuote();
+    const color = getRandomColor();
     let print = `< p class="quotes" > ${quote.quote}</p > <p class="source">${quote.source}`;
 
     if (quote.citation) {
@@ -80,7 +95,10 @@ function printQuote() {
         print += `<span class = 'author'>${quote.author}</span>`
     }
     print += `</p>`;
+    document.body.style.backgroundColor = color;
+
     return print;
+
 }
 console.log(printQuote);
 /***
@@ -88,4 +106,4 @@ console.log(printQuote);
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-//document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
