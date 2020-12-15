@@ -11,36 +11,42 @@ const quotes = [
         quote: 'The greatness of a man is not how much wealth he aquires, but in his integrity and his ability to affect those around him positively.',
         source: 'Bob Marley',
         citation: 'yourdictionary',
+        hashtag: null,
         year: null
     },
     {
         quote: 'Life is like riding a bicycle.  To keep your balance, you must keep moving.',
         source: 'Albert Einstein',
         citation: 'lifestyleanytime',
+        hashtag: null,
         year: null
     },
     {
         quote: 'Don\'t let yesterday take up too much of today.',
         source: 'Will Rogers',
         citation: 'quotespedia',
+        hashtag: null,
         year: null
     },
     {
         quote: 'If I have the belief that I can do it, I shall surely acquire the capacity to do it even if I may not have it at the beginning.',
         source: 'Gandhi',
         citation: 'goodreads',
+        hashtag: '#Goals',
         year: null
     },
     {
         quote: 'It is often easier to ask for forgiveness than permission.',
         source: 'Grace Hopper',
         citation: 'quoteinvestigator',
+        hashtag: null,
         year: '1982'
     },
     {
         quote: 'Be not glad at the misfortune of another, though he may be your enemy.',
         source: 'George Washington',
         citation: 'goodreads',
+        hashtag: null,
         year: null
     }
 ];
@@ -64,10 +70,9 @@ function getRandomQuote() {
 
     return randomQuote;
 }
-console.log(getRandomQuote());
 
 /*
-'getRandomColor' fumction
+'getRandomColor' fumction gets a random color hex code
 */
 function getRandomColor() {
     const randomColorIndex = Math.floor(Math.random() * (backgroundColor.length - 1));
@@ -87,6 +92,9 @@ function printQuote() {
     }
     if (quote.year) {
         print += `<span class = 'year'>${quote.year}</span>`
+    }
+    if (quote.hashtag) {
+        print += `<span class = 'hashtag'>, ${quote.hashtag}</span>`
     }
     print += `</p>`;
 
