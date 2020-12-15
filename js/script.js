@@ -65,7 +65,7 @@ const backgroundColor = [
  * `getRandomQuote` function
 ***/
 function getRandomQuote() {
-    const randomQuoteIndex = Math.floor(Math.random() * (quotes.length - 1));
+    const randomQuoteIndex = Math.floor(Math.random() * (quotes.length));
     const randomQuote = quotes[randomQuoteIndex];
 
     return randomQuote;
@@ -75,7 +75,7 @@ function getRandomQuote() {
 'getRandomColor' fumction gets a random color hex code
 */
 function getRandomColor() {
-    const randomColorIndex = Math.floor(Math.random() * (backgroundColor.length - 1));
+    const randomColorIndex = Math.floor(Math.random() * (backgroundColor.length));
     const randomColor = `#${backgroundColor[randomColorIndex]}`;
 
     return randomColor;
@@ -103,7 +103,7 @@ function printQuote() {
 }
 
 function recurringRandomQuotes() {
-    setInterval(printQuote, 2000);
+    setInterval(printQuote, 6000);
 }
 
 
