@@ -75,7 +75,6 @@ function getRandomColor() {
 
     return randomColor;
 }
-console.log(getRandomColor())
 /***
  * `printQuote` function
 ***/
@@ -94,9 +93,16 @@ function printQuote() {
     document.body.style.backgroundColor = color;
     document.getElementById('quote-box').innerHTML = print;
 }
+
+function recurringRandomQuotes() {
+    setInterval(printQuote, 2000);
+}
+
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('recurring-random').addEventListener("click", recurringRandomQuotes, false);
